@@ -1,8 +1,7 @@
-import React from 'react';
-import { Button, FormGroup, FormControl } from 'react-bootstrap';
+import React from 'react'
+import {Button,FormGroup,FormControl} from 'react-bootstrap'
 
 export default class FormContainer extends React.Component {
-
   constructor(props) {
     super(props)
     this.state = {
@@ -10,26 +9,32 @@ export default class FormContainer extends React.Component {
     }
   }
 
-  onChangetext(e) {
-    this.setState({ product: e.target.value })
+  hundleSubmit = () => {
+    this.props.createProduct(this.state.product)
+    this.setState({product:''})
   }
 
-  render() {
-    return (
-      <div>
-        <form>
-          <FormGroup controlId='formBasicText'>
-            <FormControl
-              type='text'
-              value={this.state.product}
-              placeholder='Enter text'
-              onChange={ e => this.onChangetext(e) }
-            />
-          </FormGroup>
+  onChangetext(e) {
+    this.setState({product: e.target.value})
+  }
 
-        </form>
-        <Button type='submit' onClick={this.hundleSubmit}>つぶやく</Button>
-        </div>
+
+  render(){
+    return(
+      <div>
+      <form>
+        <FormGroup controlId="formBasicText">
+          <FormControl
+            type="text"
+            value={this.state.product}
+            placeholder="Enter text"
+            onChange={ e => this.onChangetext(e)}
+          />
+        </FormGroup>
+
+      </form>
+      <Button type="submit" onClick={this.hundleSubmit}>つぶやく</Button>
+      </div>
     )
   }
 }

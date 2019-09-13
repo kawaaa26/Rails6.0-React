@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import ProductsContainer from './ProductsContainer';
 
 export default class MainContainer extends React.Component {
   constructor(props) {
@@ -24,6 +25,7 @@ export default class MainContainer extends React.Component {
   render() {
     return (
       <div className='app-main'>
+        <ProductsContainer productData={ this.state.products } />
       </div>
     );
   }

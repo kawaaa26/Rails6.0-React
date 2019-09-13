@@ -1,4 +1,4 @@
-import React from 'raect';
+import React from 'react';
 import ViewProduct from './ViewProduct'
 
 export default class ProductsContainer extends React.Component {
